@@ -11,6 +11,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Views\Workbench.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Page Remove="MainWindow.xaml" />
 	</ItemGroup>
 
@@ -30,6 +34,13 @@
 		<None Update="MainWindow.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</None>
+		<Page Update="Views\Workbench.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
 </Project>
