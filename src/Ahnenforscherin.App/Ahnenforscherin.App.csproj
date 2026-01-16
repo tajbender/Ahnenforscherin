@@ -1,34 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
-    <UseWinUI>true</UseWinUI>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Ahnenforscherin.App</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+		<UseWinUI>true</UseWinUI>
+		<EnableMsixTooling>true</EnableMsixTooling>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>Ahnenforscherin.App</RootNamespace>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Page Remove="MainWindow.xaml" />
-  </ItemGroup>
+	<ItemGroup>
+		<Page Remove="MainWindow.xaml" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260101001" />
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260101001" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Ahnenforscherin.Core\Ahnenforscherin.Core.csproj" />
-    <ProjectReference Include="..\Ahnenforscherin.Data\Ahnenforscherin.Data.csproj" />
-    <ProjectReference Include="..\Ahnenforscherin.Import\Ahnenforscherin.Import.csproj" />
-    <ProjectReference Include="..\Ahnenforscherin.Export\Ahnenforscherin.Export.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Ahnenforscherin.Core\Ahnenforscherin.Core.csproj" />
+		<ProjectReference Include="..\Ahnenforscherin.Data\Ahnenforscherin.Data.csproj" />
+		<ProjectReference Include="..\Ahnenforscherin.Import\Ahnenforscherin.Import.csproj" />
+		<ProjectReference Include="..\Ahnenforscherin.Export\Ahnenforscherin.Export.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="MainWindow.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</None>
+	</ItemGroup>
 
 </Project>
