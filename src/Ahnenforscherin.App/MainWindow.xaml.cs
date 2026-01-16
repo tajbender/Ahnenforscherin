@@ -1,4 +1,5 @@
 using Microsoft.UI.Xaml;
+using System.Diagnostics;
 
 namespace Ahnenforscherin.App;
 
@@ -11,6 +12,6 @@ public sealed partial class MainWindow : Window
 
     private void InitializeComponent()
     {
-        throw new NotImplementedException();
+        Debug.Print("Hello World!\nHeureka.");
     }
 }
