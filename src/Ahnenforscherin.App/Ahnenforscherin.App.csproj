@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Page Remove="MainWindow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260101001" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
   </ItemGroup>
@@ -19,6 +23,12 @@
     <ProjectReference Include="..\Ahnenforscherin.Data\Ahnenforscherin.Data.csproj" />
     <ProjectReference Include="..\Ahnenforscherin.Import\Ahnenforscherin.Import.csproj" />
     <ProjectReference Include="..\Ahnenforscherin.Export\Ahnenforscherin.Export.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>
