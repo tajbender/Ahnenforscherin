@@ -1,4 +1,5 @@
 ﻿using Microsoft.UI.Xaml;
+using System.Diagnostics;
 
 namespace Ahnenforscherin.App;
 
@@ -12,16 +13,17 @@ public partial class App : Application
     /// </summary>
     public App()
     {
+        Debug.WriteLine("App.ctor()");
         this.InitializeComponent();
+
+        Debug.WriteLine("App(new this*)");
+        this._window = new MainWindow();
+        this._window?.Activate();
     }
 
-    /// <summary>
-    /// Invoked when the application is launched.
-    /// </summary>
-    /// <param name="args">Details about the launch request and process.</param>
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        var window = new MainWindow();
-        window.Activate();
+        Debug.WriteLine("App.OnLaunched()");
+        this._window?.Activate();
     }
 }
