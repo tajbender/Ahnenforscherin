@@ -11,6 +11,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Views\SettingsPage.xaml" />
 	  <None Remove="Views\Workbench.xaml" />
 	</ItemGroup>
 
@@ -34,6 +35,9 @@
 		<None Update="MainWindow.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</None>
+		<Page Update="Views\SettingsPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</Page>
 		<Page Update="Views\Workbench.xaml">
 		  <Generator>MSBuild:Compile</Generator>
 		</Page>

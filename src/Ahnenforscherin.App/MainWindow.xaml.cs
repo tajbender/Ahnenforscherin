@@ -1,6 +1,7 @@
+using Ahnenforscherin.App.Views;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Ahnenforscherin.App.Views;
+using Windows.UI.ApplicationSettings;
 
 namespace Ahnenforscherin.App;
 
@@ -25,6 +26,10 @@ public sealed partial class MainWindow : Window
             {
                 case "workbench":
                     //ContentFrame.Navigate(typeof(Workbench));
+                    break;
+
+                case "settings":
+                    //ContentFrame.Navigate(typeof(SettingsPage));
                     break;
             }
         }

@@ -14,6 +14,10 @@
             <NavigationViewItem Content="Workbench"
                                 Icon="Home"
                                 Tag="workbench" />
+
+            <NavigationViewItem Content="Settings"
+                                Icon="Setting"
+                                Tag="settings" />
         </NavigationView.MenuItems>
 
         <Frame x:Name="ContentFrame" />
