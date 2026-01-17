@@ -5,23 +5,28 @@
         xmlns:views="using:Ahnenforscherin.App.Views"
         Title="Ahnenforscherin">
 
-    <NavigationView x:Name="NavView"
-                    PaneDisplayMode="Left"
-                    IsBackButtonVisible="Collapsed"
-                    SelectionChanged="NavView_SelectionChanged">
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
 
-        <NavigationView.MenuItems>
-            <NavigationViewItem Content="Workbench"
-                                Icon="Home"
-                                Tag="workbench" />
+    <Grid>
 
-            <NavigationViewItem Content="Settings"
-                                Icon="Setting"
-                                Tag="settings" />
-        </NavigationView.MenuItems>
+        <NavigationView x:Name="NavView"
+                        PaneDisplayMode="Left"
+                        SelectionChanged="NavView_SelectionChanged">
 
-        <Frame x:Name="ContentFrame" />
-    </NavigationView>
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Workbench"
+                                    Icon="Home"
+                                    Tag="workbench" />
+
+                <NavigationViewItem Content="Settings"
+                                    Icon="Setting"
+                                    Tag="settings" />
+            </NavigationView.MenuItems>
+
+            <Frame x:Name="ContentFrame" />
+        </NavigationView>
+    </Grid>
 
 </Window>
-    

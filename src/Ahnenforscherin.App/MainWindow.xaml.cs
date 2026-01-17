@@ -1,7 +1,5 @@
-using Ahnenforscherin.App.Views;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Windows.UI.ApplicationSettings;
 
 namespace Ahnenforscherin.App;
 
@@ -10,7 +8,8 @@ public sealed partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        //ContentFrame.Navigate(typeof(Workbench));
+        //this.ContentFrame.Navigate(typeof(Workbench));
+        var appWindow = this.AppWindow;
     }
 
     private void InitializeComponent()
