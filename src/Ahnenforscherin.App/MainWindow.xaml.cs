@@ -1,15 +1,23 @@
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using System.Diagnostics;
 
 namespace Ahnenforscherin.App;
 
 public sealed partial class MainWindow : Window
 {
+    internal bool _extendsContentIntoTitleBar = false;
+    internal UIElement? AppTitleBar = null;
+    internal AppWindow? appWindow = null;
+
     public MainWindow()
     {
+        Debug.WriteLine("MainWindow.ctor()");
         InitializeComponent();
-        ExtendsContentIntoTitleBar = true;
-        UIElement? AppTitleBar = null;
+
+        ExtendsContentIntoTitleBar = _extendsContentIntoTitleBar;
+
         if (AppTitleBar != null)
             SetTitleBar(AppTitleBar);
         var appWindow = this.AppWindow;
