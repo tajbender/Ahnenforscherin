@@ -18,6 +18,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahnenforscherin.Import", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahnenforscherin.Tests", "tests\Ahnenforscherin.Tests\Ahnenforscherin.Tests.csproj", "{01F450A2-B9C8-6681-DA94-1F069022A521}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{CC5975FD-94AF-4A94-9D68-554C31472CBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "a.i.gen", "a.i.gen", "{382DBD2B-8042-49C6-817C-A64AFA389051}"
+	ProjectSection(SolutionItems) = preProject
+		dieAhnenforscherin.ico = dieAhnenforscherin.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +66,7 @@ Global
 		{060FAFBB-D7D9-96B7-E47C-B7EEBB2BBE26} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{57B24771-9723-6170-3F36-EBEF8D073748} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{01F450A2-B9C8-6681-DA94-1F069022A521} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{382DBD2B-8042-49C6-817C-A64AFA389051} = {CC5975FD-94AF-4A94-9D68-554C31472CBC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8B84F18-751C-4B7F-BA55-38B3C8C43332}
