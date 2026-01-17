@@ -25,6 +25,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "a.i.gen", "a.i.gen", "{382D
 		dieAhnenforscherin.ico = dieAhnenforscherin.ico
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{38582688-B2AE-4B3F-A977-8382C33DB44B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F9DA507-703B-4670-944A-03558CDF6AAC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		dieAhnenforscherin.ico = dieAhnenforscherin.ico
+		global.json = global.json
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
