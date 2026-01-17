@@ -6,12 +6,24 @@
         Title="Ahnenforscherin">
 
     <Window.SystemBackdrop>
-        <MicaBackdrop />
+        <MicaBackdrop Kind="Base" />
     </Window.SystemBackdrop>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TitleBar x:Name="AppTitleBar"
+                  Title="WinUI Notes">
+            <TitleBar.IconSource>
+                <FontIconSource Glyph="&#xF4AA;" />
+            </TitleBar.IconSource>
+        </TitleBar>
 
         <NavigationView x:Name="NavView"
+                        Grid.Row="1"
                         PaneDisplayMode="Left"
                         SelectionChanged="NavView_SelectionChanged">
 

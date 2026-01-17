@@ -8,8 +8,13 @@ public sealed partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        //this.ContentFrame.Navigate(typeof(Workbench));
+        ExtendsContentIntoTitleBar = true;
+        UIElement? AppTitleBar = null;
+        if (AppTitleBar != null)
+            SetTitleBar(AppTitleBar);
         var appWindow = this.AppWindow;
+
+        //this.ContentFrame.Navigate(typeof(Workbench));
     }
 
     private void InitializeComponent()
