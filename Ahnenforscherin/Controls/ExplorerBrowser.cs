@@ -18,6 +18,7 @@ public sealed partial class ExplorerBrowser : Control
 {
     public ExplorerBrowser()
     {
+        /* WARN: CA1416 This call site is reachable on all platforms. 'Control.DefaultStyleKey' is only supported on: 'Windows' 10.0.17763.0 and later. */
         DefaultStyleKey = typeof(ExplorerBrowser);
     }
 }
