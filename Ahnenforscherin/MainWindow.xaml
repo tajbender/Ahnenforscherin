@@ -10,8 +10,7 @@
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
-    <Grid Background="#FFEAD7B8">
-        <!-- TODO: Move to theme -->
+    <Grid Background="{StaticResource AfBackgroundAltColor}">
         <NavigationView x:Name="NavigationView"
                         Header="Ahnenforscherin"
                         PaneDisplayMode="Left">
@@ -21,13 +20,13 @@
                                     Icon="GoToToday" />
                 <NavigationViewItem Content="Personen"
                                     Icon="People" />
-                <NavigationViewItem Content="Stammbaum"
+                <NavigationViewItem Content="Stammbäume"
                                     Icon="Calendar" />
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
-                <NavigationViewItem Content="Benutzerkonto"
+                <NavigationViewItem Content="Benutzerkonten"
                                     Tag="AccountPage"
-                                    Icon="Contact" />
+                                    Icon="Account" />
                 <NavigationViewItem Content="Datenquellen"
                                     Tag="DatasourcePage"
                                     Icon="Library" />
@@ -39,18 +38,32 @@
             <Grid Padding="24"
                   RowDefinitions="Auto,*,Auto">
                 <!-- Header -->
-                <StackPanel Orientation="Vertical"
-                            Spacing="4">
-                    <TextBlock Text="Workbench"
-                               FontSize="32"
-                               FontWeight="SemiBold" />
-                    <TextBlock Text="Zentrale Aktionen für deine Ahnenforscherin"
-                               Opacity="0.7" />
+                <StackPanel>
+                    <Border Grid.Row="3"
+                            Grid.ColumnSpan="3"
+                            Background="#FFEAD7B8"
+                            Padding="24"
+                            CornerRadius="12"
+                            Margin="0,0,0,24">
+                        <StackPanel>
+                            <!-- TODO: Move to theme: Background, Foreground, ... -->
+                            <TextBlock Text="Ahnenforscherin: Workbench"
+                                       FontSize="42"
+                                       FontWeight="SemiBold"
+                                       Foreground="#FF3B2A1A"
+                                       TextWrapping="Wrap" />
+                            <!-- TODO: Move to theme: Background, Foreground, ... -->
+                            <TextBlock Text="Genealogische Werkbank: Zentrale Aktionen deiner Ahnenforscherin"
+                                       FontSize="18"
+                                       Foreground="#FF8C5A24"
+                                       Margin="0,-4,0,0" />
+                        </StackPanel>
+                    </Border>
                 </StackPanel>
                 <!-- Main Action Grid -->
                 <Grid Grid.Row="1"
                       ColumnDefinitions="*,*,*"
-                      RowDefinitions="*,*,*"
+                      RowDefinitions="Auto,Auto,Auto,Auto,*"
                       ColumnSpacing="24"
                       Margin="0,24,0,24">
                     <!-- Neue Person -->
@@ -88,7 +101,7 @@
                     <!-- Import / Export -->
                     <TextBlock Grid.Column="2"
                                Grid.Row="0"
-                               Text="Daten"
+                               Text="Datenmigration"
                                FontSize="20"
                                FontWeight="SemiBold" />
                     <Button Grid.Column="2"
@@ -101,6 +114,7 @@
                             Content="GEDCOM exportieren"
                             Click="ExportGedcom_Click"
                             MinWidth="200" />
+                    <!-- TODO: Move to theme: Background, Foreground, ... -->
                     <Border Grid.Row="3"
                             Grid.ColumnSpan="3"
                             Background="#FFEAD7B8"
@@ -108,11 +122,13 @@
                             CornerRadius="12"
                             Margin="0,0,0,24">
                         <StackPanel>
+                            <!-- TODO: Move to theme: Background, Foreground, ... -->
                             <TextBlock Text="Ahnenforscherin"
                                        FontSize="42"
                                        FontWeight="SemiBold"
                                        Foreground="#FF3B2A1A"
                                        TextWrapping="Wrap" />
+                            <!-- TODO: Move to theme: Background, Foreground, ... -->
                             <TextBlock Text="Deine genealogische Werkbank"
                                        FontSize="18"
                                        Foreground="#FF8C5A24"
@@ -151,6 +167,7 @@
                 </Grid>
                 <!-- Status Footer -->
                 <!-- TODO: Add Schlagschatten -->
+                <!-- TODO: Move to theme: Background, Foreground, ... -->
                 <Border Grid.Row="2"
                         Background="#11000000"
                         Padding="12"
