@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ahnenforscherin
+namespace Ahnenforscherin.Services
 {
-    interface IPersonService
+    public interface IPersonService
     {
     }
 }

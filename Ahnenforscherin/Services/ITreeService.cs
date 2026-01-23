@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ahnenforscherin.Services
+namespace Ahnenforscherin.Services;
+
+internal interface ITreeService
 {
-    interface Interface
-    {
-    }
 }
