@@ -5,25 +5,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ahnenforscherin.Services
+namespace Ahnenforscherin.Services;
+
+internal class ThemeService
 {
-    internal class ThemeService
+    //private readonly IConfiguration _config;
+
+    //public ThemeService(IConfiguration config)
+    //{
+    //    _config = config;
+    //}
+
+
+    void SetTheme(string themeName)
     {
-        void SetTheme(string themeName)
-        {
-            var dictionaries = Application.Current.Resources.MergedDictionaries;
-            dictionaries.Clear();
+        //var themeNames = _config["Theme"] ?? "Fluent";
 
-            dictionaries.Add(new ResourceDictionary { Source = new Uri($"ms-appx:///Themes/{themeName}/Colors.xaml") });
-            dictionaries.Add(new ResourceDictionary { Source = new Uri($"ms-appx:///Themes/{themeName}/Icons.xaml") });
-            dictionaries.Add(new ResourceDictionary { Source = new Uri($"ms-appx:///Themes/{themeName}/Styles.xaml") });
-        }
 
-        public void test()
-        {
-            SetTheme("Fluent");
-            SetTheme("Material");
-            SetTheme("Indy");
-        }
+        var dictionaries = Application.Current.Resources.MergedDictionaries;
+        dictionaries.Clear();
+
+        dictionaries.Add(new ResourceDictionary { Source = new Uri($"ms-appx:///Themes/{themeName}/Colors.xaml") });
+        dictionaries.Add(new ResourceDictionary { Source = new Uri($"ms-appx:///Themes/{themeName}/Icons.xaml") });
+        dictionaries.Add(new ResourceDictionary { Source = new Uri($"ms-appx:///Themes/{themeName}/Styles.xaml") });
+    }
+
+    public void test()
+    {
+        SetTheme("Fluent");
+        SetTheme("Material");
+        SetTheme("Indy");
     }
 }
