@@ -18,6 +18,12 @@
     <None Remove="Views\SettingsPage.xaml" />
     <None Remove="Views\WorkbenchPage.xaml" />
   </ItemGroup>
+  <ItemGroup>
+    <Page Remove="Styles\App.xaml" />
+    <Page Remove="Themes\Fluent\Icons.xaml" />
+    <Page Remove="Themes\Indy\Icons.xaml" />
+    <Page Remove="Themes\Material\Icons.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -56,15 +62,32 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\Icons\Ahnenforscherin\UI\" />
+    <Folder Include="Assets\Icons\Ahnenforscherin\Workbench\" />
+    <Folder Include="Assets\Icons\Fluent\Filled\" />
+    <Folder Include="Assets\Icons\Fluent\Regular\" />
+    <Folder Include="Assets\Icons\Material\Filled\" />
+    <Folder Include="Assets\Icons\Material\Outlined\" />
     <Folder Include="Data\Migrations\" />
-    <Folder Include="Themes\Fluent\" />
-    <Folder Include="Themes\Material\" />
-    <Folder Include="Themes\Indy\" />
   </ItemGroup>
 	  <ItemGroup>
 		  <!-- Enables the TextTemplatingFileGenerator (T4) service in Visual Studio for transforming .tt templates. -->
 		  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
+	  <ItemGroup>
+	    <None Update="Styles\App.xaml">
+	      <Generator>MSBuild:Compile</Generator>
+	    </None>
+	    <None Update="Themes\Fluent\Icons.xaml">
+	      <Generator>MSBuild:Compile</Generator>
+	    </None>
+	    <None Update="Themes\Indy\Icons.xaml">
+	      <Generator>MSBuild:Compile</Generator>
+	    </None>
+	    <None Update="Themes\Material\Icons.xaml">
+	      <Generator>MSBuild:Compile</Generator>
+	    </None>
+	  </ItemGroup>
   <!--
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
     Explorer "Package and Publish" context menu entry to be enabled for this project even if
