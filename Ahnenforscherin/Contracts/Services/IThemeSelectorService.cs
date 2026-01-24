@@ -1,8 +1,6 @@
 ﻿using Microsoft.UI.Xaml;
 using System.Threading.Tasks;
 
-namespace electrifier.Contracts.Services;
-
 public interface IThemeSelectorService
 {
     ElementTheme Theme
