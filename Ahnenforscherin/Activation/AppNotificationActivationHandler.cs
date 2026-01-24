@@ -3,6 +3,8 @@ using Microsoft.UI.Xaml;
 using Microsoft.Windows.AppLifecycle;
 using Microsoft.Windows.AppNotifications;
 using Ahnenforscherin.Services;
+using System.Threading.Tasks;
+using Ahnenforscherin;
 
 namespace Ahnenforsvcherin.Activation;
 
@@ -39,10 +41,10 @@ public class AppNotificationActivationHandler // : ActivationHandler<LaunchActiv
         ////     });
         //// }
 
-        App.MainWindow.DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Low, () =>
-        {
-            App.MainWindow.ShowMessageDialogAsync("TODO: Handle notification activations.", "Notification Activation");
-        });
+//        App.MainWindow.DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Low, () =>
+//        {
+//            App.MainWindow.ShowMessageDialogAsync("TODO: Handle notification activations.", "Notification Activation");
+//        });
 
         await Task.CompletedTask;
     }

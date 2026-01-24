@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-
+using electrifier.Contracts.Services;
 using Microsoft.UI.Xaml;
 
 namespace electrifier.Activation;
@@ -21,7 +21,7 @@ public class DefaultActivationHandler : ActivationHandler<LaunchActivatedEventAr
 
     protected async override Task HandleInternalAsync(LaunchActivatedEventArgs args)
     {
-        _navigationService.NavigateTo(typeof(MainViewModel).FullName!, args.Arguments);
+//        _navigationService.NavigateTo(typeof(MainViewModel).FullName!, args.Arguments);
 
         await Task.CompletedTask;
     }
