@@ -1,2 +1,5 @@
 ﻿# Ahnenforscherin
-Prototypisiere GUI and Projektstruktur
+## Release v1.121 - beta debug
+
+Branch: main
+

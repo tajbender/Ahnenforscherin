@@ -1,4 +1,5 @@
 ﻿namespace Ahnenforscherin.Activation;
+﻿using System.Threading.Tasks;
 
 public interface IActivationHandler
 {

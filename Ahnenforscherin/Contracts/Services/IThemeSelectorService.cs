@@ -1,6 +1,5 @@
 ﻿using Microsoft.UI.Xaml;
-
-namespace electrifier.Contracts.Services;
+using System.Threading.Tasks;
 
 public interface IThemeSelectorService
 {

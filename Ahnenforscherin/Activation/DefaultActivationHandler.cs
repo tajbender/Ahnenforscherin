@@ -1,7 +1,4 @@
-﻿using Ahnenforscherin.Activation;
-using Ahnenforscherin.Services;
-using Ahnenforscherin.ViewModels;
-
+using System.Threading.Tasks;
 using Microsoft.UI.Xaml;
 
 namespace Ahnenforscherin.Activation;
@@ -23,7 +20,7 @@ public class DefaultActivationHandler : ActivationHandler<LaunchActivatedEventAr
 
     protected async override Task HandleInternalAsync(LaunchActivatedEventArgs args)
     {
-        _navigationService.NavigateTo(typeof(MainViewModel).FullName!, args.Arguments);
+//        _navigationService.NavigateTo(typeof(MainViewModel).FullName!, args.Arguments);
 
         await Task.CompletedTask;
     }
