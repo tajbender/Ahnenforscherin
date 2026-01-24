@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
+using electrifier.Contracts.Services;
+using electrifier.Helpers;
+using electrifier.Contracts.ViewModels;
 
 namespace Ahnenforscherin.Services;
 
