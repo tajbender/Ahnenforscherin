@@ -1,7 +1,8 @@
 ﻿using Microsoft.UI.Xaml.Controls;
+using System;
 using System.Collections.Generic;
 
-namespace electrifier.Contracts.Services;
+namespace Ahnenforscherin.Contracts.Services;
 
 public interface INavigationViewService
 {

@@ -1,11 +1,10 @@
-using Microsoft.UI.Dispatching;
+using Ahnenforscherin;
+using Ahnenforscherin.Services;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using Microsoft.Windows.AppLifecycle;
 using Microsoft.Windows.AppNotifications;
-using Ahnenforscherin.Services;
 using System.Threading.Tasks;
-using Ahnenforscherin;
 
 namespace Ahnenforscherin.Activation;
 

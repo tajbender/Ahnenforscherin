@@ -1,4 +1,6 @@
-﻿namespace electrifier.Contracts.Services;
+﻿using System;
+
+namespace Ahnenforscherin.Contracts.Services;
 
 public interface IPageService
 {

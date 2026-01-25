@@ -38,7 +38,7 @@ public partial class App : Application
     /// </summary>
     public App()
     {
-        InitializeComponent();
+        //InitializeComponent();
         Host = new AppHost();
     }
 

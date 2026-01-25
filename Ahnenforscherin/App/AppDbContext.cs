@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Windows.UI;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ahnenforscherin.App;
+namespace Ahnenforscherin;
 
 public partial class AppDbContext : DbContext
 {

@@ -1,4 +1,4 @@
-﻿namespace electrifier.Contracts.ViewModels;
+﻿namespace Ahnenforscherin.Contracts.ViewModels;
 
 public interface INavigationAware
 {

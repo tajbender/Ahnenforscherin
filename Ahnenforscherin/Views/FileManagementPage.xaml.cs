@@ -11,7 +11,7 @@ public sealed partial class FileManagementPage : Page
 
     public FileManagementPage()
     {
-        viewModel = App.GetService<FileManagementViewModel>();
+//        viewModel = App.GetService<FileManagementViewModel>();
         InitializeComponent();
     }
 }
