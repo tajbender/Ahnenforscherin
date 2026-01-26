@@ -1,3 +1,4 @@
+using Ahnenforscherin.Views;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -7,6 +8,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -26,48 +28,40 @@ namespace Ahnenforscherin
         public MainWindow()
         {
             InitializeComponent();
+
+            NavigationView.SelectedItem = NavigationView.MenuItems[0];
+            ContentFrame.Navigate(typeof(WorkbenchPage));
         }
 
-        private void SetStatus(string message)
+        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            StatusText.Text = message;
-        }
+            try
+            {
+                if (args.IsSettingsSelected)
+                {
+                    ContentFrame.Navigate(typeof(SettingsPage));
+                    return;
+                }
 
-        private void CreatePerson_Click(object sender, RoutedEventArgs e)
-        {
-            SetStatus("Neue Person anlegen (Dummy)...");
-            // TODO: Navigation zu PersonEditor
-        }
+                var item = (NavigationViewItem)args.SelectedItem;
+                switch (item.Tag)
+                {
+                    case "Workbench":
+                        ContentFrame.Navigate(typeof(WorkbenchPage));
+                        break;
 
-        private void OpenPersonList_Click(object sender, RoutedEventArgs e)
-        {
-            SetStatus("Personenliste öffnen (Dummy)...");
-            // TODO: Navigation zu PersonList
+                    case "Personen":
+                        ContentFrame.Navigate(typeof(PersonListPage));
+                        break;
+                    default:
+                        // TODO: Handle navigation to other pages here.
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Navigation error: " + ex.Message);
+            }
         }
-
-        private void ImportGedcom_Click(object sender, RoutedEventArgs e)
-        {
-            SetStatus("GEDCOM importieren (Dummy)...");
-            // TODO: FilePicker + Parser
-        }
-
-        private void ExportGedcom_Click(object sender, RoutedEventArgs e)
-        {
-            SetStatus("GEDCOM exportieren (Dummy)...");
-            // TODO: Exportfunktion
-        }
-
-        private void OpenTree_Click(object sender, RoutedEventArgs e)
-        {
-            SetStatus("Stammbaum öffnen (Dummy)...");
-            // TODO: TreeView öffnen
-        }
-
-        private void CreateTree_Click(object sender, RoutedEventArgs e)
-        {
-            SetStatus("Neuen Stammbaum erstellen (Dummy)...");
-            // TODO: Tree-Setup
-        }
-
     }
 }

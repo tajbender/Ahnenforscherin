@@ -9,6 +9,129 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Grid Padding="24"
+                  RowDefinitions="Auto,*,Auto">
+            <!-- Header -->
+            <StackPanel>
+                <Border Grid.Row="0"
+                            Grid.ColumnSpan="3"
+                            Background="{StaticResource AfBackgroundAltColor}"
+                            Padding="24"
+                            CornerRadius="12"
+                            Margin="0,0,0,24">
+                    <StackPanel>
+                        <!-- TODO: Move to theme: Background, Foreground, ... -->
+                        <TextBlock Text="Ahnenforscherin: Workbench"
+                                       FontSize="42"
+                                       FontWeight="SemiBold"
+                                       Foreground="{StaticResource AfTextPrimaryBrush}"
+                                       TextWrapping="Wrap" />
+                        <!-- TODO: Move to theme: Background, Foreground, ... -->
+                        <TextBlock Text="Genealogische Werkbank: Zentrale Aktionen deiner Ahnenforscherin"
+                                       FontSize="18"
+                                       Foreground="{StaticResource AfAccentDarkBrush}"
+                                       Margin="0,-4,0,0" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <!-- Main Action Grid -->
+            <Grid Grid.Row="1"
+                      ColumnDefinitions="*,*,*"
+                      RowDefinitions="Auto,Auto,Auto,*"
+                      ColumnSpacing="24"
+                      Margin="0,24,0,24">
+                <!-- Neue Person -->
+                <TextBlock Grid.Column="0"
+                               Grid.Row="0"
+                               Text="Personen"
+                               FontSize="20"
+                               FontWeight="SemiBold" />
+                <Button Grid.Column="0"
+                            Grid.Row="1"
+                            Content="Personenliste öffnen..."
+                            Click="OpenPersonList_Click"/>
+                <Button Grid.Column="0"
+                            Grid.Row="2"
+                            Content="Neue Person anlegen"
+                            Click="CreatePerson_Click"/>
+                <ListBox Grid.Column="0"
+                             Grid.Row="3"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch"/>
+                <!-- Stammbaum -->
+                <TextBlock Grid.Column="1"
+                               Grid.Row="0"
+                               Text="Stammbaum"
+                               FontSize="20"
+                               FontWeight="SemiBold" />
+                <Button Grid.Column="1"
+                            Grid.Row="1"
+                            Content="Stammbaum öffnen..."
+                            Click="OpenTree_Click"/>
+                <Button Grid.Column="1"
+                            Grid.Row="2"
+                            Content="Neu erstellen"
+                            Click="CreateTree_Click"/>
+                <ListBox x:Name="StammbaumListBox"
+                             Grid.Column="1"
+                             Grid.Row="3"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch"/>
+                <!-- Import / Export -->
+                <TextBlock Grid.Column="2"
+                               Grid.Row="0"
+                               Text="Datenmigration"
+                               FontSize="20"
+                               FontWeight="SemiBold" />
+                <Button Grid.Column="2"
+                            Grid.Row="1"
+                            Content="GEDCOM importieren"
+                            Click="ImportGedcom_Click"/>
+                <Button Grid.Column="2"
+                            Grid.Row="2"
+                            Content="GEDCOM exportieren"
+                            Click="ExportGedcom_Click"/>
+                <ListBox x:Name="ImportExportListBox"
+                             Grid.Column="2"
+                             Grid.Row="3"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch"/>
+                <!--<DropShadowPanel Grid.Row="5"
+                                     BlurRadius="12"
+                                     ShadowOpacity="0.3"
+                                     OffsetX="2"
+                                     OffsetY="4">
+                        <Border Grid.ColumnSpan="3"
+                                Background="{StaticResource AfBackgroundAltBrush}"
+                                Padding="24"
+                                CornerRadius="12"
+                                Margin="0,0,0,24">
+                            <StackPanel>
+                                <TextBlock Text="Ahnenforscherin"
+                                           FontSize="42"
+                                           FontWeight="SemiBold"
+                                           Foreground="{StaticResource AfTextPrimaryBrush}"
+                                           TextWrapping="Wrap" />
+                                <TextBlock Text="Deine genealogische Werkbank"
+                                           FontSize="18"
+                                           Foreground="{StaticResource AfTextSecondaryBrush}"
+                                           Margin="0,-4,0,0" />
+                            </StackPanel>
+                        </Border>
+                    </DropShadowPanel>-->
+            </Grid>
+            <!-- Status Footer -->
+            <!-- TODO: Add Schlagschatten -->
+            <!-- TODO: Move to theme: Background, Foreground, ... -->
+            <Border Grid.Row="3"
+                        Background="#11000000"
+                        Padding="12"
+                        CornerRadius="6">
+                <TextBlock x:Name="StatusText"
+                               Text="Bereit wenn Du es bist."
+                               Opacity="0.8" />
+            </Border>
+        </Grid>
 
     </Grid>
 </Page>

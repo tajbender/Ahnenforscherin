@@ -12,7 +12,7 @@ using Microsoft.UI.Xaml;
 
 using Windows.ApplicationModel;
 
-namespace electrifier.ViewModels;
+namespace Ahnenforscherin.ViewModels;
 
 public partial class SettingsViewModel : ObservableRecipient
 {

@@ -8,7 +8,7 @@ namespace Ahnenforscherin.Data;
 
 public class DatabaseInitializer
 {
-    //private readonly AppDbContext _db;
+    private readonly AppDbContext _db;
 
     //public DatabaseInitializer(AppDbContext db)
     //{

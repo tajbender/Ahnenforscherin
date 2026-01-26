@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="Ahnenforscherin.Views.SettingsPage"
-
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,59 +8,64 @@
     xmlns:xaml="using:Microsoft.UI.Xaml"
     xmlns:local="using:Ahnenforscherin.Views"
     mc:Ignorable="d">
+    <Grid Padding="32" x:Name="ContentArea">
+        <StackPanel Spacing="24" Grid.Row="0">
+            <TextBlock Text="Einstellungen"
+                       Style="{StaticResource TitleTextBlockStyle}" />
+            <StackPanel Spacing="12">
+                <TextBlock Text="Allgemein"
+                           Style="{StaticResource SubtitleTextBlockStyle}" />
+                <ToggleSwitch Header="Dark Mode"
+                              OffContent="Hell"
+                              OnContent="Dunkel" />
+                <ComboBox Header="Theme"
+                          PlaceholderText="Theme auswählen">
+                    <ComboBoxItem Content="Fluent" />
+                    <ComboBoxItem Content="Material" />
+                    <ComboBoxItem Content="Indy" />
+                </ComboBox>
+                <Button Content="Datenbank öffnen"
+                        HorizontalAlignment="Left"
+                        Style="{StaticResource AccentButtonStyle}" />
+                <!-- Titel -->
+                <TextBlock Text="Über Ahnenforscherin"
+                           Style="{StaticResource TitleTextBlockStyle}" />
+                <!-- App-Beschreibung -->
+                <TextBlock TextWrapping="Wrap"
+                           FontSize="16"
+                           Opacity="0.85">
+                Ahnenforscherin ist eine moderne, liebevoll gestaltete Genealogie-App,
+                die das Erkunden der eigenen Familiengeschichte zu einem kleinen Abenteuer macht.
+                </TextBlock>
+                <!-- Version -->
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <TextBlock Text="Version:" FontWeight="SemiBold"/>
+                    <TextBlock x:Name="VersionText" />
+                </StackPanel>
+                <!-- Entwickler -->
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <TextBlock Text="Entwickelt von:" FontWeight="SemiBold"/>
+                    <TextBlock Text="Thorsten (und Copilot als treuer Begleiter)" />
+                </StackPanel>
+                <!-- Links -->
+                <StackPanel Spacing="8">
+                    <TextBlock Text="Links" Style="{StaticResource SubtitleTextBlockStyle}" />
 
-  <Grid>
-        <StackPanel
-            x:Name="ContentArea">
-            <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
-            <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
-                <TextBlock x:Uid="Settings_Theme" />
+                    <HyperlinkButton Content="Projekt auf GitHub"
+                                 NavigateUri="https://github.com/dein-repo" />
 
-                <!--<StackPanel Margin="{StaticResource XSmallTopMargin}">
-                    <RadioButton
-                        x:Uid="Settings_Theme_Light"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Light</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
-                    </RadioButton>
-                    <RadioButton
-                        x:Uid="Settings_Theme_Dark"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Dark</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
-                    </RadioButton>
-                    <RadioButton
-                        x:Uid="Settings_Theme_Default"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Default</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
-                    </RadioButton>
-                </StackPanel>-->
-            </StackPanel>
+                    <HyperlinkButton Content="Website (optional)"
+                                 NavigateUri="https://deine-website.de" />
 
-            <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
-
-            <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                <!--<TextBlock Text="{x:Bind ViewModel.VersionDescription, Mode=OneWay}" Style="{ThemeResource BodyTextBlockStyle}" />-->
-
-                <TextBlock
-                    x:Uid="Settings_AboutDescription"
-                    Margin="{StaticResource XSmallTopMargin}"
-                    Style="{ThemeResource BodyTextBlockStyle}" />
-                <HyperlinkButton x:Uid="SettingsPage_PrivacyTermsLink" Margin="{StaticResource SettingsPageHyperlinkButtonMargin}" />
+                </StackPanel>
             </StackPanel>
         </StackPanel>
+        <!-- Kleiner Footer -->
+        <TextBlock Grid.Row="1"
+                   HorizontalAlignment="Center"
+            Text="© 2026 Ahnenforscherin – Alle Rechte vorbehalten."
+                   FontSize="12"
+                   Opacity="0.6"
+                   Margin="0,20,0,0"/>
     </Grid>
 </Page>
