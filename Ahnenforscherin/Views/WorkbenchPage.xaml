@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="Ahnenforscherin.Views.WorkbenchPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -7,131 +6,125 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <!-- Hover-Style für Workbench-Kacheln -->
+        <Style x:Key="WorkbenchTileStyle" TargetType="Button">
+            <Setter Property="Background" Value="{ThemeResource CardBackgroundFillColorDefaultBrush}" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Padding" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Shadow">
+                <Setter.Value>
+                    <ThemeShadow />
+                </Setter.Value>
+            </Setter>
 
-    <Grid>
-        <Grid Padding="24"
-                  RowDefinitions="Auto,*,Auto">
-            <!-- Header -->
-            <StackPanel>
-                <Border Grid.Row="0"
-                            Grid.ColumnSpan="3"
-                            Background="{StaticResource AfBackgroundAltColor}"
-                            Padding="24"
-                            CornerRadius="12"
-                            Margin="0,0,0,24">
-                    <StackPanel>
-                        <!-- TODO: Move to theme: Background, Foreground, ... -->
-                        <TextBlock Text="Ahnenforscherin: Workbench"
-                                       FontSize="42"
-                                       FontWeight="SemiBold"
-                                       Foreground="{StaticResource AfTextPrimaryBrush}"
-                                       TextWrapping="Wrap" />
-                        <!-- TODO: Move to theme: Background, Foreground, ... -->
-                        <TextBlock Text="Genealogische Werkbank: Zentrale Aktionen deiner Ahnenforscherin"
-                                       FontSize="18"
-                                       Foreground="{StaticResource AfAccentDarkBrush}"
-                                       Margin="0,-4,0,0" />
-                    </StackPanel>
-                </Border>
+            <!--<Setter Property="Translation" Value="0,0,8" />-->
+
+            <!--<Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="RootGrid">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            --><!-- Hover --><!--
+                            <Trigger Property="IsPointerOver" Value="True">
+                                <Setter TargetName="RootGrid" Property="Scale" Value="1.05" />
+                                <Setter TargetName="RootGrid" Property="Opacity" Value="0.95" />
+                            </Trigger>
+
+                            --><!-- Pressed --><!--
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="RootGrid" Property="Scale" Value="0.97" />
+                                <Setter TargetName="RootGrid" Property="Opacity" Value="0.85" />
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>-->
+
+        </Style>
+    </Page.Resources>
+    <ScrollViewer>
+        <StackPanel Padding="32" Spacing="32">
+            <!-- Begrüßung -->
+            <StackPanel Spacing="4">
+                <TextBlock Text="Willkommen in Ahnenforscherin"
+                           FontSize="28"
+                           FontWeight="SemiBold" />
+
+                <TextBlock Text="Beginne dein Abenteuer in der Familiengeschichte"
+                           FontSize="16"
+                           Opacity="0.85" />
             </StackPanel>
-            <!-- Main Action Grid -->
-            <Grid Grid.Row="1"
-                      ColumnDefinitions="*,*,*"
-                      RowDefinitions="Auto,Auto,Auto,*"
-                      ColumnSpacing="24"
-                      Margin="0,24,0,24">
-                <!-- Neue Person -->
-                <TextBlock Grid.Column="0"
-                               Grid.Row="0"
-                               Text="Personen"
-                               FontSize="20"
-                               FontWeight="SemiBold" />
-                <Button Grid.Column="0"
-                            Grid.Row="1"
-                            Content="Personenliste öffnen..."
-                            Click="OpenPersonList_Click"/>
-                <Button Grid.Column="0"
-                            Grid.Row="2"
-                            Content="Neue Person anlegen"
-                            Click="CreatePerson_Click"/>
-                <ListBox Grid.Column="0"
-                             Grid.Row="3"
-                             HorizontalAlignment="Stretch"
-                             VerticalAlignment="Stretch"/>
-                <!-- Stammbaum -->
-                <TextBlock Grid.Column="1"
-                               Grid.Row="0"
-                               Text="Stammbaum"
-                               FontSize="20"
-                               FontWeight="SemiBold" />
-                <Button Grid.Column="1"
-                            Grid.Row="1"
-                            Content="Stammbaum öffnen..."
-                            Click="OpenTree_Click"/>
-                <Button Grid.Column="1"
-                            Grid.Row="2"
-                            Content="Neu erstellen"
-                            Click="CreateTree_Click"/>
-                <ListBox x:Name="StammbaumListBox"
-                             Grid.Column="1"
-                             Grid.Row="3"
-                             HorizontalAlignment="Stretch"
-                             VerticalAlignment="Stretch"/>
-                <!-- Import / Export -->
-                <TextBlock Grid.Column="2"
-                               Grid.Row="0"
-                               Text="Datenmigration"
-                               FontSize="20"
-                               FontWeight="SemiBold" />
-                <Button Grid.Column="2"
-                            Grid.Row="1"
-                            Content="GEDCOM importieren"
-                            Click="ImportGedcom_Click"/>
-                <Button Grid.Column="2"
-                            Grid.Row="2"
-                            Content="GEDCOM exportieren"
-                            Click="ExportGedcom_Click"/>
-                <ListBox x:Name="ImportExportListBox"
-                             Grid.Column="2"
-                             Grid.Row="3"
-                             HorizontalAlignment="Stretch"
-                             VerticalAlignment="Stretch"/>
-                <!--<DropShadowPanel Grid.Row="5"
-                                     BlurRadius="12"
-                                     ShadowOpacity="0.3"
-                                     OffsetX="2"
-                                     OffsetY="4">
-                        <Border Grid.ColumnSpan="3"
-                                Background="{StaticResource AfBackgroundAltBrush}"
-                                Padding="24"
-                                CornerRadius="12"
-                                Margin="0,0,0,24">
-                            <StackPanel>
-                                <TextBlock Text="Ahnenforscherin"
-                                           FontSize="42"
-                                           FontWeight="SemiBold"
-                                           Foreground="{StaticResource AfTextPrimaryBrush}"
-                                           TextWrapping="Wrap" />
-                                <TextBlock Text="Deine genealogische Werkbank"
-                                           FontSize="18"
-                                           Foreground="{StaticResource AfTextSecondaryBrush}"
-                                           Margin="0,-4,0,0" />
-                            </StackPanel>
-                        </Border>
-                    </DropShadowPanel>-->
-            </Grid>
-            <!-- Status Footer -->
-            <!-- TODO: Add Schlagschatten -->
-            <!-- TODO: Move to theme: Background, Foreground, ... -->
-            <Border Grid.Row="3"
-                        Background="#11000000"
-                        Padding="12"
-                        CornerRadius="6">
-                <TextBlock x:Name="StatusText"
-                               Text="Bereit wenn Du es bist."
-                               Opacity="0.8" />
-            </Border>
-        </Grid>
+            <!-- Drei Hauptkacheln -->
+            <Grid x:Name="RootGrid" ColumnSpacing="24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-    </Grid>
+                <!-- Personen -->
+                <Button Grid.Column="0" Style="{StaticResource WorkbenchTileStyle}">
+                    <StackPanel HorizontalAlignment="Center" Spacing="12">
+                        <FontIcon Glyph="&#xE77B;" FontFamily="Segoe Fluent Icons" FontSize="36" />
+                        <TextBlock Text="Personen" FontSize="18" FontWeight="SemiBold" />
+                    </StackPanel>
+                </Button>
+
+                <!-- Stammbaum -->
+                <Button Grid.Column="1" Style="{StaticResource WorkbenchTileStyle}">
+                    <StackPanel HorizontalAlignment="Center" Spacing="12">
+                        <FontIcon Glyph="&#xE8B7;" FontFamily="Segoe Fluent Icons" FontSize="36" />
+                        <TextBlock Text="Stammbaum" FontSize="18" FontWeight="SemiBold" />
+                    </StackPanel>
+                </Button>
+
+                <!-- Migration -->
+                <Button Grid.Column="2" Style="{StaticResource WorkbenchTileStyle}">
+                    <StackPanel HorizontalAlignment="Center" Spacing="12">
+                        <FontIcon Glyph="&#xE707;" FontFamily="Segoe Fluent Icons" FontSize="36" />
+                        <TextBlock Text="Migration" FontSize="18" FontWeight="SemiBold" />
+                    </StackPanel>
+                </Button>
+
+            </Grid>
+
+            <!-- Statusbereich -->
+            <StackPanel Spacing="8">
+                <TextBlock Text="Status"
+                           FontSize="20"
+                           FontWeight="SemiBold" />
+
+                <TextBlock Text="0 Personen" Opacity="0.7" />
+                <TextBlock Text="0 Familien" Opacity="0.7" />
+                <TextBlock Text="0 Orte" Opacity="0.7" />
+            </StackPanel>
+
+            <!-- Quick Actions -->
+            <StackPanel Spacing="12">
+                <TextBlock Text="Schnellaktionen"
+                           FontSize="20"
+                           FontWeight="SemiBold" />
+
+                <Button Content="Neue Person anlegen"
+                        HorizontalAlignment="Left" />
+
+                <Button Content="GEDCOM importieren"
+                        HorizontalAlignment="Left" />
+
+                <Button Content="Datenbank öffnen"
+                        HorizontalAlignment="Left" />
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
 </Page>
