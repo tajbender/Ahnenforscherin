@@ -1,16 +1,19 @@
 ﻿using Ahnenforscherin.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
-using Microsoft.EntityFrameworkCore;
 
 namespace Ahnenforscherin;
 
 public partial class AppDbContext : DbContext
 {
+    private object optionsBuilder;
+
     public DbSet<Person> Personen { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
@@ -18,8 +21,10 @@ public partial class AppDbContext : DbContext
     {
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        //options.UseSqlite("Data Source=ahnenforscherin.db");
+        optionsBuilder.UseSqlServer(
+            @"Server=(localdb)\mssqllocaldb;Database=Test;ConnectRetryCount=0",
+                            providerOptions => { providerOptions.EnableRetryOnFailure(); });
     }
 }

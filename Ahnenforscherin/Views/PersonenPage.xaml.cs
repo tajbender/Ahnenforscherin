@@ -1,4 +1,5 @@
 using Ahnenforscherin.Models;
+using Ahnenforscherin.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -25,10 +26,14 @@ namespace Ahnenforscherin.Views;
 /// </summary>
 public sealed partial class PersonenPage : Page
 {
+    public PersonenViewModel ViewModel { get; }
+
     public PersonenPage()
     {
         InitializeComponent();
-
-        var repo = App.Services.GetRequiredService<IPersonRepository>();
+        ViewModel = new PersonenViewModel(
+            App.Services.GetRequiredService<IPersonRepository>()
+        );
+        DataContext = ViewModel;
     }
 }

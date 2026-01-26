@@ -1,5 +1,6 @@
 ﻿using Ahnenforscherin.Models;
 using Ahnenforscherin.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -48,7 +49,7 @@ public partial class App : Application
         var services = new ServiceCollection();
         _ = services.AddDbContext<AppDbContext>(static options =>
         {
-            //options.UseSqlite("Data Source=ahnenforscherin.db");
+            options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test;ConnectRetryCount=0");
         });
 
         _ = services.AddScoped<IPersonRepository, PersonRepository>();
