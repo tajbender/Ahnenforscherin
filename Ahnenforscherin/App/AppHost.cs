@@ -1,4 +1,5 @@
 ﻿using Ahnenforscherin.Services;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Threading.Tasks;
 
@@ -35,5 +36,10 @@ public sealed class AppHost
         //// 4) Theme laden
         //var theme = Services.GetRequiredService<ThemeService>();
         //theme.LoadTheme();
+    }
+
+    internal HostApplicationBuilder CreateApplicationBuilder()
+    {
+        throw new NotImplementedException();
     }
 }

@@ -1,7 +1,10 @@
 ﻿using Ahnenforscherin.Models;
 using Ahnenforscherin.Services;
+using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using CommunityToolkit.Mvvm;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -43,7 +46,6 @@ public partial class App : Application
     /// </summary>
     public App()
     {
-        //InitializeComponent();
         Host = new AppHost();
 
         var services = new ServiceCollection();
@@ -70,8 +72,6 @@ public partial class App : Application
 //        Services = host.Services;
 //
 //        InitializeComponent();
-
-
     }
 
     /// <summary>
@@ -87,7 +87,11 @@ public partial class App : Application
         _window.Activate();
         this.MainWindow = _window;
 
-        //var test = var mainWindow = (MainWindow)App.Current.MainWindow;
+    }
 
+
+    public static HostApplicationBuilder CreateApplicationBuilder() 
+    { 
+        return Host.CreateApplicationBuilder(); // Error: Leads to NotImplementedException
     }
 }
